@@ -1,4 +1,3 @@
-poof
-====
+# Vuash
 
-Send a message through a self-destructing link. Once the first person opens it, it's gone.
+Compartilhe uma mensagem acessível apenas uma vez.
