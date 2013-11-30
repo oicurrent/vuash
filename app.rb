@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'active_record'
+require 'securerandom'
 
 ActiveRecord::Base.configurations = { 'memory' => { adapter: 'sqlite3', database: ":memory:" } }
 ActiveRecord::Base.establish_connection(ActiveRecord::Base.configurations["memory"])
@@ -14,7 +15,8 @@ get '/' do
 end
 
 post '/' do
-  @message = Message.new(info: params['info'])
+  @message = Message.new(info: params['info'], uuid: SecureRandom.hex)
+
   if @message.save
     haml :show
   else
@@ -22,19 +24,30 @@ post '/' do
   end
 end
 
+
 __END__
 
 @@layout
 %html
   %title Vuash
-  = yield
+
+  %div
+    = yield
 
 @@ index
 %form(action = '/' method = 'post')
   %textarea(name = 'info')
+  %br
   %input(type= 'submit' value='Enviar')
 
 @@ show
 %div
-  Mensagem criada com sucesso!
+  %h1
+    Mensagem criada com sucesso!
+
+  %br
   = @message.info
+  %br
+  Link:
+  %a(href="http://localhost:9393/messages/#{@message.uuid}")
+    http://localhost:9393/messages/#{@message.uuid}
