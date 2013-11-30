@@ -4,21 +4,12 @@ Compartilhe uma mensagem acessível apenas uma vez.
 
 ## Instalação
 
-1. Instalar gems necessárias:
+Instalar as gems `activerecord`, `sinatra` e `shotgun`.
 
-- activerecord
-- sinatra
-- shotgun
+Rodar `bundle`.
 
-2. Bundle
+Iniciar o servidor com `be shotgun`.
 
-3. Start o server
-$ be shotgun
+Criar banco de dados com `rake db:migrate`.
 
-4. Criar DB
-rake migrate
-
-5. Acessar o link
-http://localhost:9393
-
-6. Enjoy :)
+Acessar `http://localhost:9393`.
