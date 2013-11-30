@@ -5,11 +5,6 @@ require 'securerandom'
 ActiveRecord::Base.configurations = { 'memory' => { adapter: 'sqlite3', database: "memory.db" } }
 ActiveRecord::Base.establish_connection(ActiveRecord::Base.configurations["memory"])
 
-# Essa linha deve ser descomentada na primeira vez que o scrip rodar
-# Apos isso ela deve ser comentada, pq o active record ja tera criada a tabela
-# TODO: Fix it
-# load 'schema.rb'
-
 class Message < ActiveRecord::Base
 end
 

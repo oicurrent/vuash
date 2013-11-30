@@ -15,9 +15,10 @@ Compartilhe uma mensagem acessível apenas uma vez.
 3. Start o server
 $ be shotgun
 
-4. Acessar o link a primeira vez
-http://localhost:9393
+4. Criar DB
+rake migrate
 
-5. Comentar a linha: load 'schema.rb' no arquivo `app.rb` # TODO fix it
+5. Acessar o link
+http://localhost:9393
 
 6. Enjoy :)
