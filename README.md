@@ -10,6 +10,6 @@ Rodar `bundle`.
 
 Iniciar o servidor com `be shotgun`.
 
-Criar banco de dados com `rake db:migrate`.
+Criar banco de dados com `rake migrate`.
 
 Acessar `http://localhost:9393`.
