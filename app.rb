@@ -20,10 +20,8 @@ post '/' do
 end
 
 get '/messages/:uuid' do
-  message = Message.find_by(uuid: params['uuid'])
-  if message
-    @info = message.info
-    message.destroy
+  if @message = Message.find_by(uuid: params['uuid'])
+    @message.destroy
     haml :show
   else
     haml :removed
