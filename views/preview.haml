@@ -1,0 +1,13 @@
+%h1
+  Mensagem criada com sucesso!
+
+%br
+= @message.info
+%br
+Link:
+%a(href="http://localhost:9393/messages/#{@message.uuid}")
+  http://localhost:9393/messages/#{@message.uuid}
+
+%br
+%a(href="/")
+  Voltar
