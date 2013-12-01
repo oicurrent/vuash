@@ -2,7 +2,7 @@ require 'sinatra'
 require 'active_record'
 require 'securerandom'
 
-require_relative 'arbase'
+require_relative 'db/config'
 require_relative 'models/message'
 
 get '/' do
