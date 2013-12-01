@@ -1,4 +1,5 @@
 require 'uri'
+require 'active_record'
 
 configuration = {}
 
