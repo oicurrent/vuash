@@ -1,14 +1,16 @@
 #!/usr/bin/env rake
 
 task :migrate do
-  if File.exists? 'memory.db'
+  database = 'db/vuash.db'
+
+  if File.exists? database
     puts 'Database already created'
   else
     require 'active_record'
-    ActiveRecord::Base.configurations = { 'memory' => { adapter: 'sqlite3', database: "memory.db" } }
-    ActiveRecord::Base.establish_connection(ActiveRecord::Base.configurations["memory"])
+    ActiveRecord::Base.configurations = { 'vuash' => { adapter: 'sqlite3', database: database } }
+    ActiveRecord::Base.establish_connection(ActiveRecord::Base.configurations["vuash"])
 
-    load 'schema.rb'
+    load 'db/schema.rb'
 
     puts 'Database succesfully created'
   end
