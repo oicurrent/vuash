@@ -2,11 +2,8 @@ require 'sinatra'
 require 'active_record'
 require 'securerandom'
 
+require_relative 'arbase'
 require_relative 'models/message'
-
-ActiveRecord::Base.configurations = { 'vuash' => { adapter: 'sqlite3', database: "db/vuash.db" } }
-ActiveRecord::Base.establish_connection(ActiveRecord::Base.configurations["vuash"])
-
 
 get '/' do
   haml :index
