@@ -3,7 +3,9 @@ require 'active_record'
 require 'securerandom'
 
 require_relative 'db/config'
-require_relative 'models/message'
+
+class Message < ActiveRecord::Base
+end
 
 get '/' do
   haml :index
