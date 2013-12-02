@@ -4,8 +4,7 @@ require 'securerandom'
 
 require_relative 'db/config'
 
-class Message < ActiveRecord::Base
-end
+class Message < ActiveRecord::Base; end
 
 get '/' do
   haml :index
