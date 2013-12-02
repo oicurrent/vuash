@@ -26,7 +26,7 @@ class Message < ActiveRecord::Base
 
   private
   def set_uuid
-    write_attribute :uuid, SecureRandom.hex
+    write_attribute :uuid, SecureRandom.uuid
   end
 
   def digest(string)
