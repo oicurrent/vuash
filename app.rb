@@ -19,7 +19,7 @@ post '/' do
   end
 end
 
-get '/messages/:uuid' do
+get '/:uuid' do
   if @message = Message.find_by(uuid: params['uuid'])
     @message.destroy
     haml :show
