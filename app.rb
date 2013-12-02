@@ -21,9 +21,14 @@ get '/messages/:uuid' do
   @message = Message.find_by(uuid: params['uuid'])
 
   if @message
-    @message.destroy
-    @message.decrypt(params['secret'])
-    haml :show
+    if params['secret']
+      @message.destroy
+      @message.decrypt(params['secret'])
+
+      haml :show
+    else
+      haml :secret
+    end
   else
     haml :removed
   end
