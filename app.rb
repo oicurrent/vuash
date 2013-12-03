@@ -10,19 +10,25 @@ get '/' do
 end
 
 post '/' do
-  @message = Message.new(info: params['info'], uuid: SecureRandom.hex)
+  @message = Message.new body: params['body']
+  @message.encrypt(params['secret'])
+  @message.save!
 
-  if @message.save
-    haml :preview
-  else
-    'Something goes wrong'
-  end
+  haml :preview
 end
 
 get '/:uuid' do
-  if @message = Message.find_by(uuid: params['uuid'])
-    @message.destroy
-    haml :show
+  @message = Message.find_by(uuid: params['uuid'])
+
+  if @message
+    if params['secret']
+      @message.destroy
+      @message.decrypt(params['secret'])
+
+      haml :show
+    else
+      haml :secret
+    end
   else
     haml :removed
   end
