@@ -5,8 +5,8 @@
 = @message.body
 %br
 Link:
-%a(href="http://localhost:9393/#{@message.uuid}")
-  http://localhost:9393/#{@message.uuid}
+%a(href="http://localhost:9393/#{@message.uuid}?secret=#{@message.secret}")
+  http://localhost:9393/#{@message.uuid}?secret=#{@message.secret}
 
 %br
 %a(href="/")
