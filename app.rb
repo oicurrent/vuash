@@ -11,7 +11,7 @@ end
 
 post '/' do
   @message = Message.new body: params['body']
-  @message.encrypt(params['secret'])
+  @message.encrypt
   @message.save!
 
   haml :preview

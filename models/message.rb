@@ -1,10 +1,12 @@
 require 'openssl'
 
 class Message < ActiveRecord::Base
-  attr_accessor :body
+  attr_accessor :body, :secret
   before_create :set_uuid
 
-  def encrypt(secret)
+  def encrypt
+    self.secret = 8.times.collect { chars.sample }.join
+
     cipher = OpenSSL::Cipher::AES.new(256, :CBC)
     cipher.encrypt
 
@@ -31,5 +33,9 @@ class Message < ActiveRecord::Base
 
   def digest(string)
     OpenSSL::Digest::SHA256.digest(string)
+  end
+
+  def chars
+    Array('A'..'z') + Array('0'..'9')
   end
 end
