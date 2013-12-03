@@ -17,7 +17,7 @@ post '/' do
   haml :preview
 end
 
-get '/messages/:uuid' do
+get '/:uuid' do
   @message = Message.find_by(uuid: params['uuid'])
 
   if @message
