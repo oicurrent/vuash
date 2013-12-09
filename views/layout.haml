@@ -1,5 +1,12 @@
+!!!
 %html
-  %title Vuash
+  %meta(charset="utf-8")
+  %title VUASH - Mensagens seguras que podem ser lidas uma vez
+  %link(href="/stylesheets/application.css" rel="stylesheet")
 
-  %div
-    = yield
+  %div.wrapper
+    %header.top
+      %h1.logo
+        %img(src="images/logo.svg")
+        Vuash
+    %main= yield

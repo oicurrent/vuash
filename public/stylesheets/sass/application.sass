@@ -1,0 +1,78 @@
+@import "reset.css"
+@import "bourbon/bourbon"
+
+@import url(http://fonts.googleapis.com/css?family=Quicksand:300,400,700)
+@import url(http://fonts.googleapis.com/css?family=Oxygen+Mono)
+
+$font: Quicksand, sans-serif
+$mono: Oxygen Mono, monospace
+
+$lilac: #be7693
+$dark: #464952
+$medium: #cfd7eb
+$light: #f3f5fa
+$white: #fff
+
+body
+  color: $dark
+  font-family: $font
+
+.wrapper
+  margin: 1em auto
+  max-width: 600px
+  padding: 1em
+
+.top
+  margin-bottom: 2em
+
+h1.logo
+  color: $lilac
+  font-size: 2em
+  text-transform: uppercase
+
+  img
+    width: 1.5em
+    vertical-align: -.3em
+
+textarea
+  background-color: $white
+  border: 1px solid $medium
+  border-radius: .5em
+  color: $dark
+  font:
+    family: $mono
+    size: 1em
+  height: 20em
+  margin-bottom: 1em
+  outline: none
+  padding: 1em
+  resize: vertical
+  width: 100%
+  +box-sizing(border-box)
+
+  &:focus
+    border-color: $lilac
+
+input[type=submit]
+  background-color: $lilac
+  border: none
+  border-radius: .5em
+  color: $light
+  cursor: pointer
+  display: block
+  font:
+    family: $font
+    size: 1.2em
+  margin: 0
+  outline: none
+  padding: 1em
+  text-transform: uppercase
+  width: 100%
+  +box-sizing(border-box)
+
+  &:hover,
+  &:focus
+    background-color: lighten($lilac, 5%)
+
+  &:active
+    background-color: darken($lilac, 5%)
