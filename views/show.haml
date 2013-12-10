@@ -1,8 +1,8 @@
-%h1
-  Essa mensagem se auto-destruiu
+%h1 Você recebeu uma mensagem
 
-%br
-= @message.body
+%p Esta mensagem se autodestruirá após fechá-la.
+
+%article.message= @message.body
 
 %br
 %a(href="/")

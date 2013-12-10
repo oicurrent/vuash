@@ -7,11 +7,17 @@
 $font: Quicksand, sans-serif
 $mono: Oxygen Mono, monospace
 
+$yellow: #fe0
 $lilac: #be7693
 $dark: #464952
 $medium: #cfd7eb
 $light: #f3f5fa
 $white: #fff
+
+=calc($attribute, $value)
+  #{$attribute}: -moz-calc(#{$value})
+  #{$attribute}: -webkit-calc(#{$value})
+  #{$attribute}: calc(#{$value})
 
 body
   color: $dark
@@ -34,7 +40,8 @@ h1.logo
     width: 1.5em
     vertical-align: -.3em
 
-textarea
+textarea,
+article.message
   background-color: $white
   border: 1px solid $medium
   border-radius: .5em
@@ -53,6 +60,14 @@ textarea
   &:focus
     border-color: $lilac
 
+  +placeholder
+    color: $medium
+    font:
+      family: $font
+      size: 2em
+    text-align: center
+    padding-top: 2em
+
 input[type=submit]
   background-color: $lilac
   border: none
@@ -66,6 +81,8 @@ input[type=submit]
   margin: 0
   outline: none
   padding: 1em
+  text-align: center
+  text-decoration: none
   text-transform: uppercase
   width: 100%
   +box-sizing(border-box)
@@ -76,3 +93,36 @@ input[type=submit]
 
   &:active
     background-color: darken($lilac, 5%)
+
+p.link
+  padding: 2em 0
+
+  input
+    background-color: $white
+    border: 2px solid $lilac
+    border-radius: .5em
+    color: $lilac
+    display: block
+    font-size: 1em
+    margin: 0
+    padding: 1em
+    width: 100%
+    +box-sizing(border-box)
+
+    &:focus
+      background-color: $lilac
+      color: $light
+
+    ::selection
+      background: transparent
+
+footer.actions
+
+  a
+    background-color: $light
+    color: $dark
+    font:
+      size: .9em
+      weight: 600
+    text-decoration: none
+    text-transform: uppercase
