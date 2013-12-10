@@ -1,4 +1,6 @@
 %h1
   Mensagem criada com sucesso!
 
-%input(type='text' class='js-link' value="http://localhost:9393/#{@message.uuid}?secret=#{@message.secret}" size='50')
+%input(type='text' id='to-copy' value="http://localhost:9393/#{@message.uuid}?secret=#{@message.secret}" size='50')
+%button(id="copy-button" data-clipboard-target='to-copy')
+  Copiar link
