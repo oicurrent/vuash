@@ -3,7 +3,7 @@
 %p O link a seguir é único e só poderá ser aberto uma vez.
 
 %p.link
-  %input(type="text" readonly value="http://localhost:9393/#{@message.uuid}?secret=#{@message.secret}" onclick="this.select()")
+  %input(type="text" readonly value="http://localhost:9393/#{@message.uuid}?secret=#{@message.secret}" onclick="this.select()" onfocus="this.select()")
 
 %footer.actions
   %a.button(href="/") Criar mais um Vuash
