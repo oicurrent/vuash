@@ -1,14 +1,17 @@
 $(function() {
-  var clip = new ZeroClipboard($("#copy-button"), {
-      moviePath: "/swfs/ZeroClipboard.swf"
-  });
-
-  clip.on("load", function(client) {
-    client.on("complete", function(client, args) {
-      $('#to-copy').trigger('click')
-      console.log("Copied text to clipboard: " + args.text );
+  function reload() {
+    var clip = new ZeroClipboard($("#copy-button"), {
+        moviePath: "/swfs/ZeroClipboard.swf"
     });
-  });
+
+    clip.on("load", function(client) {
+      client.on("complete", function(client, args) {
+        $('#to-copy').focus()
+        $('#to-copy').select()
+        //console.log("Copied text to clipboard: " + args.text );
+      });
+    });
+  }
 
   $('#to-copy').on('click', function(){
     $(this).focus()
@@ -26,8 +29,10 @@ $(function() {
       data: data,
       type: 'POST',
     }).done(function(html){
+      $('.result').hide();
       $('.result').html(html);
       $('.result').slideDown();
+      reload();
 
     });
   });
