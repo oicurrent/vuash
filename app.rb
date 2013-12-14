@@ -10,7 +10,9 @@ get '/' do
 end
 
 post '/' do
-  @message = Message.new body: params['body']
+  data = params['body']
+  return if data.empty?
+  @message = Message.new body: data
   @message.encrypt
   @message.save!
 
