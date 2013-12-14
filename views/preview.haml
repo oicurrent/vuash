@@ -6,6 +6,3 @@
   %input(type='text' readonly id='to-copy' value="http://localhost:9393/#{@message.uuid}?secret=#{@message.secret}" size='50')
   %button(id="copy-button" data-clipboard-target='to-copy')
     Copiar link
-
-%footer.actions
-  %a.button(href="/") Criar mais um Vuash

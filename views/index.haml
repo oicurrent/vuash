@@ -1,3 +1,5 @@
-%form(action='/' method='post')
+%div.result(style = 'display:none')
+
+%form(action='/' method='post' id='vuash-form')
   %textarea(name='body' required autofocus maxlength="1000" placeholder='Escreva uma mensagem que só poderá ser lida uma vez.')
   %input(type='submit' value='Vuash')

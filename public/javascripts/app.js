@@ -14,4 +14,21 @@ $(function() {
     $(this).focus()
     $(this).select()
   });
+
+  $('#vuash-form').on('submit', function(ev){
+    ev.preventDefault();
+
+    var url  = $(this).attr('href');
+    var data = $(this).serialize();
+
+    $.ajax({
+      url: url,
+      data: data,
+      type: 'POST',
+    }).done(function(html){
+      $('.result').html(html);
+      $('.result').slideDown();
+
+    });
+  });
 })
