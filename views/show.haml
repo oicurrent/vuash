@@ -1,9 +1,8 @@
-%h1 Você recebeu uma mensagem
+%h2 Você recebeu uma mensagem
 
-%p Esta mensagem se autodestruirá após fechá-la.
+%p O link para esta mensagem só funciona uma vez.
 
 %article.message= @message.body
 
-%br
-%a(href="/")
-  Voltar
+%footer.actions
+  %a(href="/") Criar um Vuash

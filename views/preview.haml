@@ -1,8 +1,10 @@
-%h1 Pronto para o envio
+%h2 Pronto para compartilhar
 
 %p O link a seguir é único e só poderá ser aberto uma vez.
 
 %p.link
   %input(type='text' readonly id='to-copy' value="http://localhost:9393/#{@message.uuid}?secret=#{@message.secret}" size='50')
-  %button(id="copy-button" data-clipboard-target='to-copy')
-    Copiar link
+  %button(id="copy-button" data-clipboard-target='to-copy') Copiar link
+
+%footer.actions
+  %a.button(href="/") Criar mais um Vuash
