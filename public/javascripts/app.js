@@ -8,7 +8,6 @@ $(function() {
       client.on("complete", function(client, args) {
         $('#to-copy').focus()
         $('#to-copy').select()
-        //console.log("Copied text to clipboard: " + args.text );
       });
     });
   }
@@ -18,8 +17,20 @@ $(function() {
     $(this).select()
   });
 
+  $('.result').on('click', 'a.button', function(ev){
+    ev.preventDefault();
+    $('.result').hide();
+    $('form')
+      .show()
+      .find('textarea')
+      .val('')
+      .focus();
+  })
+
   $('#vuash-form').on('submit', function(ev){
     ev.preventDefault();
+    $(this).slideUp()
+    $('.loading').fadeIn()
 
     var url  = $(this).attr('href');
     var data = $(this).serialize();
@@ -29,10 +40,10 @@ $(function() {
       data: data,
       type: 'POST',
     }).done(function(html){
+      $('.loading').fadeOut()
       $('.result').hide();
       $('.result').html(html);
       $('.result').slideDown();
-      $('form').slideUp();
       reload();
     });
   });
