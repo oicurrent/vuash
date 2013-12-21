@@ -28,7 +28,6 @@ $(function() {
       data: data,
       type: 'POST',
       success: function(html) {
-        reload()
         $('.loading').fadeOut()
         $('.result')
           .hide()
