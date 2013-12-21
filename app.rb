@@ -20,17 +20,16 @@ post '/' do
 end
 
 get '/:uuid' do
-  @message = Message.find_by(uuid: params['uuid'])
+  uuid = params['uuid'][0..15]
+  secret = params['uuid'][16..32]
+
+  @message = Message.find_by(uuid: uuid)
 
   if @message
-    if params['secret']
-      @message.destroy
-      @message.decrypt(params['secret'])
+    @message.destroy
+    @message.decrypt(secret)
 
-      haml :show
-    else
-      haml :secret
-    end
+    haml :show
   else
     haml :removed
   end

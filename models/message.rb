@@ -5,7 +5,7 @@ class Message < ActiveRecord::Base
   before_create :set_uuid
 
   def encrypt
-    self.secret = 8.times.collect { chars.sample }.join
+    self.secret = SecureRandom.hex(8)
 
     cipher = OpenSSL::Cipher::AES.new(256, :CBC)
     cipher.encrypt
@@ -28,14 +28,10 @@ class Message < ActiveRecord::Base
 
   private
   def set_uuid
-    write_attribute :uuid, SecureRandom.uuid
+    write_attribute :uuid, SecureRandom.hex(8)
   end
 
   def digest(string)
     OpenSSL::Digest::SHA256.digest(string)
-  end
-
-  def chars
-    Array('A'..'z') + Array('0'..'9')
   end
 end
