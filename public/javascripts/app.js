@@ -32,8 +32,8 @@ $(function() {
       $('.result').hide();
       $('.result').html(html);
       $('.result').slideDown();
+      $('form').slideUp();
       reload();
-
     });
   });
 })
