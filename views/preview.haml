@@ -8,3 +8,20 @@
 
 %footer.actions
   %a.button(href="/") Criar mais um Vuash
+
+:javascript
+  $(function() {
+    var clip = new ZeroClipboard($("#copy-button"), {
+      moviePath: "/swfs/ZeroClipboard.swf"
+    })
+
+    clip.on("load", function(client) {
+      client.on("complete", function(client, args) {
+        $('#to-copy').focus().select()
+      })
+    })
+
+    $('#to-copy').on('click', function(){
+      $(this).focus().select()
+    })
+  })

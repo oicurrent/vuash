@@ -1,50 +1,40 @@
 $(function() {
-  function reload() {
-    var clip = new ZeroClipboard($("#copy-button"), {
-        moviePath: "/swfs/ZeroClipboard.swf"
-    });
-
-    clip.on("load", function(client) {
-      client.on("complete", function(client, args) {
-        $('#to-copy').focus()
-        $('#to-copy').select()
-      });
-    });
-  }
-
-  $('#to-copy').on('click', function(){
-    $(this).focus()
-    $(this).select()
-  });
 
   $('.result').on('click', 'a.button', function(ev){
-    ev.preventDefault();
-    $('.result').hide();
+    ev.preventDefault()
+    $('.result').hide()
     $('form')
       .show()
       .find('textarea')
       .val('')
-      .focus();
+      .focus()
   })
 
-  $('#vuash-form').on('submit', function(ev){
-    ev.preventDefault();
-    $(this).slideUp()
-    $('.loading').fadeIn()
+  $(document).ajaxStart(function() {
+    $('form').hide()
+    $('.loading').show()
+  })
 
-    var url  = $(this).attr('href');
-    var data = $(this).serialize();
+
+  $('#vuash-form').on('submit', function(ev){
+    ev.preventDefault()
+
+    var url  = $(this).attr('href')
+    var data = $(this).serialize()
+
 
     $.ajax({
       url: url,
       data: data,
       type: 'POST',
-    }).done(function(html){
-      $('.loading').fadeOut()
-      $('.result').hide();
-      $('.result').html(html);
-      $('.result').slideDown();
-      reload();
-    });
-  });
+      success: function(html) {
+        reload()
+        $('.loading').fadeOut()
+        $('.result')
+          .hide()
+          .html(html)
+          .slideDown()
+      }
+    })
+  })
 })
