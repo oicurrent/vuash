@@ -134,22 +134,31 @@ input[type=submit]
     background-color: darken($dark, 5%)
 
 p.link
-  padding: 1em 0 2em
 
   input
     background-color: $yellow
     border: 2px solid $dark
     border-radius: .5em
     color: $dark
-    display: block
+    display: inline-block
     font-size: 1em
-    margin: 0
+    margin: 0 2% 0 0
     padding: 1em
-    width: 100%
+    vertical-align: top
+    width: 78%
     +box-sizing(border-box)
 
     &:focus
       background-color: $white
+
+  #copy-button
+    @extend input[type=submit]
+    border: 2px solid $dark
+    display: inline-block
+    font-size: 1em
+    padding: 0.95em
+    vertical-align: top
+    width: 20%
 
 footer.actions
   text-align: center

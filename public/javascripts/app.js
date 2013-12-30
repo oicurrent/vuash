@@ -11,8 +11,8 @@ $(function() {
   })
 
   $(document).ajaxStart(function() {
-    $('form').hide()
-    $('.loading').show()
+    $('form').fadeOut()
+    $('.loading').delay(500).fadeIn()
   })
 
 
@@ -30,9 +30,10 @@ $(function() {
       success: function(html) {
         $('.loading').fadeOut()
         $('.result')
-          .hide()
+          .fadeOut()
           .html(html)
-          .slideDown()
+          .delay(500)
+          .fadeIn()
       }
     })
   })
