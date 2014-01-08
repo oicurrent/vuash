@@ -36,7 +36,7 @@ get '/:uuid' do
 end
 
 get '/public/stylesheets/sass/:name.sass' do |name|
-    require './public/stylesheets/sass/bourbon/lib/bourbon.rb'
-      content_type :css
-        sass name.to_sym, :layout => false
+  require './public/stylesheets/sass/bourbon/lib/bourbon.rb'
+  content_type :css
+  sass name.to_sym, :layout => false
 end
