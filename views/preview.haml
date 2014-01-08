@@ -3,7 +3,7 @@
 %p O link a seguir é único e só poderá ser aberto uma vez.
 
 %p.link
-  %input(type='text' readonly id='to-copy' value="http://localhost:9393/#{@message.uuid}#{@message.secret}" size='50')>
+  %input(type='text' readonly id='to-copy' value="#{request.url}#{@message.uuid}#{@message.secret}" size='50')>
   %button(id="copy-button" data-clipboard-target='to-copy') Copiar
 
 :javascript
