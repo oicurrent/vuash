@@ -40,3 +40,7 @@ get '/public/stylesheets/sass/:name.sass' do |name|
   content_type :css
   sass name.to_sym, :layout => false
 end
+
+after do
+  ActiveRecord::Base.clear_active_connections!
+end
