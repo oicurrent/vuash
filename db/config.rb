@@ -14,7 +14,7 @@ end
 
 configuration = {
   adapter: uri.scheme,
-  database: File.join(".", uri.path),
+  database: uri.path[1..-1],
   host: uri.host,
   user: uri.user,
   password: uri.password
