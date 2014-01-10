@@ -16,7 +16,7 @@ post '/' do
   @message.encrypt
   @message.save!
 
-  haml :preview, layout: false
+  haml :preview
 end
 
 get '/:uuid' do
