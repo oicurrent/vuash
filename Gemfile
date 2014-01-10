@@ -8,6 +8,7 @@ gem "haml", "~> 4.0.4"
 gem "sass"
 gem "bourbon"
 gem "activerecord"
+gem "newrelic_rpm"
 
 group :development do
   gem 'shotgun'
