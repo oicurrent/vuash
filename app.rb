@@ -39,7 +39,7 @@ end
 get '/public/stylesheets/sass/:name.sass' do |name|
   require './public/stylesheets/sass/bourbon/lib/bourbon.rb'
   content_type :css
-  sass name.to_sym, :layout => false
+  sass name.to_sym, layout: false
 end
 
 after do

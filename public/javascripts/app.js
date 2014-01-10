@@ -1,4 +1,4 @@
-$(function() {
+jQuery(function($) {
 
   $('.result').on('click', 'a.button', function(ev){
     ev.preventDefault()
