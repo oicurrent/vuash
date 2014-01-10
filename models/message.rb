@@ -24,6 +24,7 @@ class Message < ActiveRecord::Base
     cipher.key = digest(secret)
 
     @body = cipher.update(data) + cipher.final
+    @body.force_encoding("UTF-8")
   end
 
   private
