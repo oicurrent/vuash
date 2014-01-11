@@ -8,10 +8,10 @@ $font: Quicksand, sans-serif
 $mono: Oxygen Mono, monospace
 
 $yellow: #fe0
-$dark: #464952
-$medium: #cfd7eb
-$light: #f3f5fa
 $white: #fff
+$light: #cfd7eb
+$medium: darken($light, 20%)
+$dark: #464952
 
 =calc($attribute, $value)
   #{$attribute}: -moz-calc(#{$value})
@@ -20,20 +20,28 @@ $white: #fff
 
 body
   color: $dark
-  font-family: $font
+  font-family: $mono
   line-height: 1.5
 
-.wrapper
-  margin: 1em auto
-  max-width: 600px
-  padding: 1em
+body,
+input,
+button,
+textarea
+  -webkit-font-smoothing: antialiased
+
+.inner
+  margin: 0 auto
+  max-width: 640px
+  padding: 0 20px
 
 .top
-  margin-bottom: 2em
+  border-bottom: 1px solid $light
+  margin-bottom: 40px
+  padding: 20px 0
 
 a
-  background-color: $medium
-  border-radius: .5em
+  background-color: $light
+  border-radius: .3em
   color: $dark
   display: inline-block
   font:
@@ -49,7 +57,9 @@ a
 
 h1.logo
   color: $dark
-  font-size: 2em
+  font:
+    family: $font
+    size: 2em
   text-transform: uppercase
 
   a
@@ -60,46 +70,33 @@ h1.logo
     padding: 0
 
   img
-    width: 1.5em
-    vertical-align: -.3em
+    width: 1em
 
 h2
-  border-top: 1px solid $medium
-  font-weight: 600
-  margin-bottom: 1.5em
-  padding-top: 1em
-  text-transform: uppercase
+  font-size: 1.5em
+  margin-bottom: .5em
 
 p:not(:last-child)
-  margin-bottom: 2em
+  color: $medium
+  margin-bottom: 4em
 
 textarea,
 article.message
-  background-color: $light
-  border: 2px solid $dark
-  border-radius: .5em
+  background-color: $white
+  border: none
   color: $dark
   font:
     family: $mono
-    size: 1em
+    size: 1.2em
   margin-bottom: 1em
-  min-height: 20em
+  min-height: 15em
   outline: none
-  padding: 1em
   resize: vertical
   width: 100%
   +box-sizing(border-box)
 
-  &:focus
-    background-color: $white
-
   +placeholder
-    color: $medium
-    font:
-      family: $font
-      size: 1.5em
-    text-align: center
-    padding: 4em
+    color: $light
 
 article.message
   min-height: 0
@@ -109,13 +106,14 @@ article.message
 input[type=submit]
   background-color: $dark
   border: none
-  border-radius: .5em
-  color: $light
+  border-radius: .3em
+  color: $white
   cursor: pointer
   display: block
   font:
     family: $font
     size: 1.2em
+    weight: 600
   margin: 0
   outline: none
   padding: 1em
@@ -123,6 +121,7 @@ input[type=submit]
   text-decoration: none
   text-transform: uppercase
   width: 100%
+  +appearance(none)
   +box-sizing(border-box)
   +transition(all 100ms ease-out)
 
@@ -137,26 +136,26 @@ p.link
 
   input
     background-color: $yellow
-    border: 2px solid $dark
-    border-radius: .5em
+    border: none
+    border-radius: .3em
     color: $dark
     display: inline-block
-    font-size: 1em
+    font:
+      family: $mono
+      size: 1em
+    line-height: 1
     margin: 0 2% 0 0
     padding: 1em
     vertical-align: top
     width: 78%
     +box-sizing(border-box)
 
-    &:focus
-      background-color: $white
-
   #copy-button
     @extend input[type=submit]
-    border: 2px solid $dark
     display: inline-block
-    font-size: 1em
-    padding: 0.95em
+    font-size: 1.1em
+    line-height: 1
+    padding: 1em
     vertical-align: top
     width: 20%
 

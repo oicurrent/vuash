@@ -7,10 +7,11 @@
   %script(type='text/javascript' src='/javascripts/ZeroClipboard.js')
   %script(type='text/javascript' src='/javascripts/app.js')
 
-  %div.wrapper
-    %header.top
+  %header.top
+    %div.inner
       %h1.logo
         %a(href='/')
           %img(src="images/logo.svg")
           Vuash
-    %main= yield
+  %main
+    %div.inner= yield
