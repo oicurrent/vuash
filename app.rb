@@ -2,6 +2,10 @@ require 'sinatra'
 require 'newrelic_rpm'
 require_relative 'boot'
 
+configure do
+  disable :sessions
+end
+
 get '/' do
   haml :index
 end
