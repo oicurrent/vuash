@@ -1,4 +1,5 @@
 require 'openssl'
+require 'securerandom'
 
 class Message < ActiveRecord::Base
   attr_accessor :body, :secret

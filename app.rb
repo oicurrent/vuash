@@ -1,10 +1,6 @@
 require 'sinatra'
-require 'active_record'
-require 'securerandom'
 require 'newrelic_rpm'
-
-require_relative 'db/config'
-require_relative 'models/message'
+require_relative 'boot'
 
 get '/' do
   haml :index
