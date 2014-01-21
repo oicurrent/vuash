@@ -1,8 +1,7 @@
 ---
 attributes:
-  target: vuash
-  repos: git@github.com:oicurrent/vuash.git
   environment: production
+  deploy_user: deploy
   ruby_version: 2.1.0
 
 preferences:
