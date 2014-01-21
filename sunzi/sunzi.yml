@@ -1,0 +1,11 @@
+---
+attributes:
+  target: vuash
+  repos: git@github.com:oicurrent/vuash.git
+  environment: production
+  ruby_version: 2.1.0
+
+preferences:
+  erase_remote_folder: true
+  cache_remote_recipes: false
+  eval_erb: true

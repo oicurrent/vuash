@@ -9,6 +9,7 @@ gem "sass"
 gem "bourbon"
 gem "activerecord"
 gem "newrelic_rpm"
+gem "sunzi"
 
 group :development do
   gem 'shotgun'
