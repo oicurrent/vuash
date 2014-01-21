@@ -14,6 +14,7 @@ gem "sunzi"
 group :development do
   gem "shotgun"
   gem "sqlite3"
+  gem "capistrano"
 end
 
 group :production do
