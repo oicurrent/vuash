@@ -12,10 +12,11 @@ gem "newrelic_rpm"
 gem "sunzi"
 
 group :development do
-  gem 'shotgun'
+  gem "shotgun"
   gem "sqlite3"
 end
 
 group :production do
+  gem "unicorn"
   gem "pg"
 end
