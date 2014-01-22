@@ -41,7 +41,6 @@ else
   git clone https://github.com/sstephenson/rbenv.git /usr/local/rbenv
   git clone https://github.com/sstephenson/ruby-build.git /usr/local/rbenv/plugins/ruby-build
   git clone https://github.com/sstephenson/rbenv-vars.git /usr/local/rbenv/plugins/rbenv-vars
-  git clone https://github.com/sstephenson/rbenv-gem-rehash.git /usr/local/rbenv/plugins/rbenv-gem-rehash
 
   echo 'export RBENV_ROOT="/usr/local/rbenv"' >> /etc/profile.d/rbenv.sh
   echo 'export PATH="$RBENV_ROOT/bin:$PATH"' >> /etc/profile.d/rbenv.sh
