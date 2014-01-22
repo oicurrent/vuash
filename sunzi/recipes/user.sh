@@ -9,4 +9,8 @@ else
   cp /root/.ssh/authorized_keys /home/$user/.ssh/authorized_keys
   chown -R $user:$user /home/$user/.ssh
   chmod -R 700 /home/$user/.ssh
+
+  mkdir -p /var/www
+  chown -R $user:$user /var/www
+  chmod g+s /var/www
 fi
