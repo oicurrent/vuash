@@ -3,6 +3,7 @@ attributes:
   environment: production
   deploy_user: deploy
   ruby_version: 2.1.0
+  ruby_path: /usr/local
 
 preferences:
   erase_remote_folder: true

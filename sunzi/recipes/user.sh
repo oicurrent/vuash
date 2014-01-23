@@ -1,16 +1,14 @@
-user=$1
-
-if [ -d /home/$user ]; then
-  echo "$user user already exists, skipping."
+if [ -d /home/$1 ]; then
+  echo "$1 user already exists, skipping."
 else
-  useradd -m $user
+  useradd -m $1
 
-  mkdir -p /home/$user/.ssh
-  cp /root/.ssh/authorized_keys /home/$user/.ssh/authorized_keys
-  chown -R $user:$user /home/$user/.ssh
-  chmod -R 700 /home/$user/.ssh
+  mkdir -p /home/$1/.ssh
+  cp /root/.ssh/authorized_keys /home/$1/.ssh/authorized_keys
+  chown -R $1:$1 /home/$1/.ssh
+  chmod -R 700 /home/$1/.ssh
 
   mkdir -p /var/www
-  chown -R $user:$user /var/www
+  chown -R $1:$1 /var/www
   chmod g+s /var/www
 fi
