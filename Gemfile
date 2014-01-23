@@ -15,7 +15,6 @@ group :development do
   gem "shotgun"
   gem "sqlite3"
   gem "capistrano"
-  gem "capistrano-rbenv"
   gem "capistrano-bundler"
 end
 
