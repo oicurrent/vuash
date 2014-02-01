@@ -21,6 +21,10 @@ post '/' do
 end
 
 get '/:uuid' do
+  haml :before_show
+end
+
+post '/:uuid' do
   uuid = params['uuid'][0..15]
   secret = params['uuid'][16..32]
 
