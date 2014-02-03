@@ -39,5 +39,3 @@ server 'vua.sh', user: 'deploy', roles: %w{web app db}
 #     # password: 'please use keys'
 #   }
 # setting per server overrides global ssh_options
-set :rbenv_type, :system
-set :rbenv_ruby, '2.1.0'
