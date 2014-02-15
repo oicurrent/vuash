@@ -1,7 +1,7 @@
 require './app'
 require 'sass/plugin/rack'
 
-run Sinatra::Application
+run Vuash::Application
 
 Sass::Plugin.options[:style] = :compressed
 use Sass::Plugin::Rack

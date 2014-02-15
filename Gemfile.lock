@@ -31,6 +31,8 @@ GEM
     newrelic_rpm (3.7.1.182)
     pg (0.17.1)
     rack (1.5.2)
+    rack-cache (1.2)
+      rack (>= 0.4)
     rack-protection (1.5.1)
       rack
     rainbow (1.99.1)
@@ -61,6 +63,7 @@ DEPENDENCIES
   haml (~> 4.0.4)
   newrelic_rpm
   pg
+  rack-cache
   sass
   shotgun
   sinatra (~> 1.4.4)

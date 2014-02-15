@@ -4,6 +4,7 @@ ruby "2.1.0"
 source "https://rubygems.org"
 
 gem "sinatra", "~> 1.4.4"
+gem "rack-cache"
 gem "haml", "~> 4.0.4"
 gem "sass"
 gem "bourbon"
