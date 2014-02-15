@@ -5,6 +5,6 @@ if [ -f .env ]; then
   source .env
 fi
 
-echo start
+echo "start"
 bundle exec unicorn -c config/unicorn.rb "$@"
-echo end
+echo "end"
