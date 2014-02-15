@@ -41,7 +41,9 @@ namespace :deploy do
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
       within release_path do
+        puts '---'
         execute './unicorn -D'
+        puts '---'
       end
     end
   end
