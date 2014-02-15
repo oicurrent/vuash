@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
+echo "start 1"
 set -a
 
 if [ -f .env ]; then
   source .env
 fi
 
-echo "start"
+echo "start 2"
 bundle exec unicorn -c config/unicorn.rb "$@"
 echo "end"
