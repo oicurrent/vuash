@@ -24,11 +24,9 @@ set :branch, :capistrano
 # set :pty, true
 
 # Default value for :linked_files is []
-# set :linked_files, %w{config/database.yml}
 set :linked_files, %w{.env}
 
 # Default value for linked_dirs is []
-# set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 set :linked_dirs, %w{bin log tmp}
 
 # Default value for default_env is {}
