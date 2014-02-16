@@ -43,7 +43,7 @@ namespace :deploy do
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
       puts '---'
-      execute "#{release_path}/unicorn -D #{release_path}"
+      execute "#{release_path}/unicorn -D"
       puts '---'
     end
   end
