@@ -2,9 +2,9 @@
 timeout 30
 worker_processes 2 # increase or decrease
 
-pid '/tmp/unicorn.pid'
-stderr_path './log/unicorn_error.log'
-stdout_path './log/unicorn.log'
+pid $UNICORN_PID
+stderr_path $UNICORN_ERR
+stdout_path $UNICORN_OUT
 
 # make forks faster
 preload_app true

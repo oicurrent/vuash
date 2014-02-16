@@ -29,6 +29,7 @@ set :linked_files, %w{.env}
 
 # Default value for linked_dirs is []
 # set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+set :linked_dirs, %w{bin log}
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
@@ -41,11 +42,9 @@ namespace :deploy do
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
-      within release_path do
-        puts '---'
-        execute './unicorn -D'
-        puts '---'
-      end
+      puts '---'
+      execute "#{release_path}/unicorn -D #{release_path}"
+      puts '---'
     end
   end
 

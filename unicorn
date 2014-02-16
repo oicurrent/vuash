@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
-echo "start 1"
 set -a
 
-pushd /var/www/vuash/current
-  if [ -f /var/www/vuash/shared/.env ]; then
-    source /var/www/vuash/shared/.env
+pushd /var/www/vuash
+  if [ -f shared/.env ]; then
+    source shared/.env
   fi
 
-  bundle exec unicorn -c config/unicorn.rb "$@"
+  pushd current
+    bundle exec unicorn -c config/unicorn.rb "$@"
+  popd
 popd
