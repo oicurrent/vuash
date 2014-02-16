@@ -3,8 +3,8 @@ echo "start 1"
 set -a
 
 pushd /var/www/vuash/current
-  if [ -f .env ]; then
-    source .env
+  if [ -f /var/www/vuash/shared/.env ]; then
+    source /var/www/vuash/shared/.env
   fi
 
   bundle exec unicorn -c config/unicorn.rb "$@"
