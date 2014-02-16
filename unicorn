@@ -12,5 +12,5 @@ pushd /var/www/vuash/shared
 popd
 
 pushd /var/www/vuash/current
-  bundle exec unicorn -c config/unicorn.rb --daemonoize
+  bundle exec unicorn -c config/unicorn.rb --daemonize
 popd
