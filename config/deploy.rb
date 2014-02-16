@@ -25,6 +25,7 @@ set :branch, :capistrano
 
 # Default value for :linked_files is []
 # set :linked_files, %w{config/database.yml}
+set :linked_files, %w{.env}
 
 # Default value for linked_dirs is []
 # set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
@@ -42,7 +43,6 @@ namespace :deploy do
     on roles(:app), in: :sequence, wait: 5 do
       within release_path do
         puts '---'
-        execute 'pwd'
         execute './unicorn -D'
         puts '---'
       end
