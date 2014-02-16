@@ -2,7 +2,7 @@
 timeout 30
 worker_processes 2 # increase or decrease
 
-pid "/tmp/unicorn.pid"
+pid "tmp/unicorn.pid"
 stderr_path "log/unicorn.err"
 stdout_path "log/unicorn.log"
 
