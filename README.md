@@ -17,7 +17,7 @@ We encrypt your message without storing any secret key in the database. This ens
 ## Running it locally
 
 ```shell
-$ git clone git@github.com:oicurrent/vuash.git
+$ git clone git@github.com:current/vuash.git
 $ cd vuash
 $ bundle install
 $ rake migrate
