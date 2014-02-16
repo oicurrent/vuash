@@ -21,7 +21,7 @@ if sunzi.install "sysstat"; then
   /etc/init.d/sysstat restart
 fi
 
+source recipes/user.sh <%= @attributes.deploy_user %>
 source recipes/postgresql.sh
 source recipes/nginx.sh
-source recipes/rbenv.sh
-source recipes/ruby.sh <%= @attributes.ruby_version %>
+source recipes/ruby.sh <%= @attributes.ruby_version %> <%= @attributes.ruby_path %>

@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+set -a
+
+pushd /var/www/vuash/shared
+  if [ -f .env ]; then
+    source .env
+  fi
+
+  if [ -f tmp/unicorn.pid ]; then
+    kill -QUIT $(cat tmp/unicorn.pid)
+  fi
+popd
+
+pushd /var/www/vuash/current
+  bundle exec unicorn -c config/unicorn.rb --daemonize
+popd
