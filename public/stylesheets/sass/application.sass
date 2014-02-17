@@ -40,20 +40,23 @@ textarea
   padding: 20px 0
 
 a
-  background-color: $light
+  background-color: $dark
   border-radius: .3em
-  color: $dark
+  color: $white
   display: inline-block
   font:
     size: .8em
     weight: 600
-  padding: .2em .5em
+  padding: .3em 1em
   text-decoration: none
   text-transform: uppercase
 
   &:hover,
   &:focus
-    background-color: $yellow
+    background-color: lighten($dark, 10%)
+
+  &:active
+    background-color: darken($dark, 5%)
 
 h1.logo
   color: $dark
@@ -64,6 +67,7 @@ h1.logo
 
   a
     background: none
+    color: $dark
     font:
       size: 1em
       weight: normal
@@ -99,8 +103,10 @@ article.message
     color: $light
 
 article.message
+  background-color: lighten($light, 5%)
   min-height: 0
   margin-bottom: 4em
+  padding: 1em
   resize: none
 
 input[type=submit]
