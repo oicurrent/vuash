@@ -6,6 +6,9 @@
   %input(type='text' readonly id='to-copy' value="#{request.url}#{@message.uuid}#{@message.secret}" size='50')>
   %button(id="copy-button" data-clipboard-target='to-copy') Copiar
 
+%footer.actions
+  %a(href="/") Criar outro Vuash
+
 :javascript
   $(function() {
     var clip = new ZeroClipboard($("#copy-button"), {
