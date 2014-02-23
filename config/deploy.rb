@@ -9,7 +9,7 @@ set :repo_url, 'git@github.com:current/vuash.git'
 
 # Default deploy_to directory is /var/www/my_app
 set :deploy_to, '/var/www/vuash'
-set :branch, :capistrano
+set :branch, :master
 
 # Default value for :scm is :git
 # set :scm, :git
