@@ -2,7 +2,7 @@
 lock '3.1.0'
 
 set :application, 'vuash'
-set :repo_url, 'git@github.com:current/vuash.git'
+set :repo_url, 'https://github.com/current/vuash.git'
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
