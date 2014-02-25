@@ -11,6 +11,11 @@ module Vuash
       disable :sessions
     end
 
+    helpers do
+      include Rack::Utils
+      alias_method :h, :escape_html
+    end
+
     before do
       cache_control :public, :max_age => 36000
     end
@@ -63,5 +68,6 @@ module Vuash
       content_type :css
       sass name.to_sym, layout: false
     end
+
   end
 end
