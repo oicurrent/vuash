@@ -1,25 +1,34 @@
 !!!
 %html
-  %meta(charset="utf-8")
-  %title Vuash
-  %link(href="/stylesheets/application.css" rel="stylesheet")
+  %head
+    %meta(charset="utf-8")
+    %title Vuash
+    %link(href="/stylesheets/application.css" rel="stylesheet")
 
-  %meta(property="og:image" content="https://vua.sh/images/vuash_logo.png")
-  %meta(property='og:type' content='website')
-  %meta(property="og:url" content="https://vua.sh/")
-  %meta(property="og:site_name" content="Vuash")
-  %meta(property="og:title" content="Vuash")
-  %meta(property="og:description" content="Mensagens criptografadas, que só podem ser lidas uma vez.")
+    %meta(property="og:image" content="https://vua.sh/images/vuash_logo.png")
+    %meta(property='og:type' content='website')
+    %meta(property="og:url" content="https://vua.sh/")
+    %meta(property="og:site_name" content="Vuash")
+    %meta(property="og:title" content="Vuash")
+    %meta(property="og:description" content="Mensagens criptografadas, que só podem ser lidas uma vez.")
 
-  %script(type='text/javascript' src='https://code.jquery.com/jquery-1.10.2.min.js')
-  %script(type='text/javascript' src='/javascripts/ZeroClipboard.js')
-  %script(type='text/javascript' src='/javascripts/app.js')
+    %script(type='text/javascript' src='https://code.jquery.com/jquery-1.10.2.min.js')
+    %script(type='text/javascript' src='/javascripts/ZeroClipboard.js')
+    %script(type='text/javascript' src='/javascripts/app.js')
 
-  %header.top
-    %div.inner
-      %h1.logo
-        %a(href='/')
-          %img(src="images/logo.svg")
-          Vuash
-  %main
-    %div.inner= yield
+  %body
+    %div.wrapper
+      %header.top
+        %h1.logo
+          %a(href='/')
+            %img(src="images/logo.svg")
+            Vuash
+        -# %button.toggle-fullscreen(type="button")
+      %main= yield
+      %footer
+        Desenvolvimento
+        %a(href="http://current.com.br/" target="_blank") Current
+        e
+        %a(href="http://standardcode.com.br/" target="_blank") Standard Code
+        \-
+        %a(href="http://github.com/current/vuash" target="_blank") GitHub

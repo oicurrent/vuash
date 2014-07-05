@@ -37,4 +37,10 @@ jQuery(function($) {
       }
     })
   })
+
+  $('.toggle-fullscreen').click(function(){
+    $(this).toggleClass('active');
+    $('.wrapper').toggleClass('fullscreen');
+    $('textarea.new').focus();
+  })
 })

@@ -1,4 +1,4 @@
-@import "reset.css"
+@import "reset"
 @import "bourbon/bourbon"
 
 @import url(https://fonts.googleapis.com/css?family=Quicksand:300,400,700)
@@ -7,11 +7,12 @@
 $font: Quicksand, sans-serif
 $mono: Oxygen Mono, monospace
 
-$yellow: #fe0
 $white: #fff
 $light: #cfd7eb
-$medium: darken($light, 20%)
 $dark: #464952
+$medium: scale-color($dark, $lightness: 30%)
+$yellow: #fe0
+$blue: #4a90e2
 
 =calc($attribute, $value)
   #{$attribute}: -moz-calc(#{$value})
@@ -19,8 +20,9 @@ $dark: #464952
   #{$attribute}: calc(#{$value})
 
 body
+  background-color: $dark
   color: $dark
-  font-family: $mono
+  font-family: $font
   line-height: 1.5
 
 body,
@@ -29,40 +31,77 @@ button,
 textarea
   -webkit-font-smoothing: antialiased
 
-.inner
-  margin: 0 auto
-  max-width: 640px
-  padding: 0 20px
+.wrapper
+  background-color: $white
+  border-radius: .3em
+  left: 50%
+  margin-bottom: 4em
+  position: absolute
+  top: 50%
+  width: 640px
+  +transform(translate(-50%, -50%))
+
+  &.fullscreen
+    bottom: 20px
+    left: 20px
+    right: 20px
+    top: 20px
+    width: auto
+    +transform(translate(0,0))
+
+.top,
+main
+  padding: 20px
+
+main
+  font-family: $mono
 
 .top
   border-bottom: 1px solid $light
-  margin-bottom: 40px
-  padding: 20px 0
+  +clearfix
 
-a
-  background-color: $dark
+footer
+  bottom: -3em
+  color: $light
+  font:
+    size: .8em
+    weight: 700
+  left: 0
+  position: absolute
+  text-align: center
+  width: 100%
+
+  a
+    color: $white
+    text-decoration: none
+
+    &:hover,
+    &:focus
+      border-bottom: 1px solid $blue
+
+main a
+  background-color: $blue
   border-radius: .3em
   color: $white
   display: inline-block
   font:
     size: .8em
-    weight: 600
+    weight: 700
   padding: .3em 1em
   text-decoration: none
   text-transform: uppercase
 
   &:hover,
   &:focus
-    background-color: lighten($dark, 10%)
+    background-color: scale-color($blue, $lightness: 10%)
 
   &:active
-    background-color: darken($dark, 5%)
+    background-color: scale-color($blue, $lightness: -5%)
 
 h1.logo
-  color: $dark
-  font:
-    family: $font
-    size: 2em
+  font-size: 2em
+  float: left
+  line-height: 1
   text-transform: uppercase
 
   a
@@ -70,32 +109,66 @@ h1.logo
     color: $dark
     font:
       size: 1em
-      weight: normal
+      weight: 400
+    outline: none
     padding: 0
+    text-decoration: none
 
   img
+    vertical-align: -4px
     width: 1em
 
+.toggle-fullscreen
+  +appearance(none)
+  background: url("/images/fullscreen.svg") no-repeat top left transparent
+  border: none
+  border-radius: 3px
+  cursor: pointer
+  float: right
+  height: 32px
+  margin: 0
+  outline: none
+  padding: 0
+  width: 32px
+  +transition(background-color 100ms ease-out)
+
+  &:hover,
+  &:focus
+    background-color: $blue
+    background-position: top right
+
+  &.active
+    background-position: bottom left
+
+    &:hover,
+    &:focus
+      background-position: bottom right
+
 h2
-  font-size: 1.5em
+  font-size: 1.4em
   margin-bottom: .5em
 
-p:not(:last-child)
+p
   color: $medium
-  margin-bottom: 4em
+
+p:not(:last-child)
+  margin-bottom: 2em
 
 textarea,
 article.message
-  background-color: $white
-  border: none
-  color: $dark
   font:
     family: $mono
     size: 1.2em
-  margin-bottom: 1em
-  min-height: 15em
+  height: 20em
+
+textarea
+  +appearance(none)
+  background-color: $white
+  border: none
+  color: $dark
+  margin-bottom: 20px
   outline: none
-  resize: vertical
+  resize: none
   width: 100%
   +box-sizing(border-box)
 
@@ -103,15 +176,14 @@ article.message
     color: $light
 
 article.message
-  background-color: lighten($light, 5%)
+  background-color: scale-color($light, $lightness: 50%)
   min-height: 0
-  margin-bottom: 4em
   padding: 1em
-  resize: none
+  overflow: auto
   word-wrap: break-word
 
 input[type=submit]
-  background-color: $dark
+  background-color: $blue
   border: none
   border-radius: .3em
   color: $white
@@ -120,7 +192,7 @@ input[type=submit]
   font:
     family: $font
     size: 1.2em
-    weight: 600
+    weight: 700
   margin: 0
   outline: none
   padding: 1em
@@ -134,10 +206,10 @@ input[type=submit]
 
   &:hover,
   &:focus
-    background-color: lighten($dark, 10%)
+    background-color: scale-color($blue, $lightness: 10%)
 
   &:active
-    background-color: darken($dark, 5%)
+    background-color: scale-color($blue, $lightness: -5%)
 
 p.link
 
