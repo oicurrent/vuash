@@ -4,21 +4,8 @@
 
 %p.link
   %input(type='text' readonly id='to-copy' value="#{request.url}#{@message.uuid}#{@message.secret}" size='50')>
-  %button(id="copy-button" data-clipboard-target='to-copy') Copiar
 
 :javascript
-  $(function() {
-    var clip = new ZeroClipboard($("#copy-button"), {
-      moviePath: "/swfs/ZeroClipboard.swf"
-    })
-
-    clip.on("load", function(client) {
-      client.on("complete", function(client, args) {
-        $('#to-copy').focus().select()
-      })
-    })
-
     $('#to-copy').on('click', function(){
       $(this).focus().select()
     })
-  })
