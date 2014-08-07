@@ -14,15 +14,12 @@ $medium: scale-color($dark, $lightness: 30%)
 $yellow: #fe0
 $blue: #4a90e2
 
-=calc($attribute, $value)
-  #{$attribute}: -moz-calc(#{$value})
-  #{$attribute}: -webkit-calc(#{$value})
-  #{$attribute}: calc(#{$value})
-
 body
   background-color: $dark
   color: $dark
-  font-family: $font
+  font:
+    family: $font
+    weight: 400
   line-height: 1.5
 
 body,
@@ -52,9 +49,6 @@ textarea
 .top,
 main
   padding: 20px
-
-main
-  font-family: $mono
 
 .top
   border-bottom: 1px solid $light
@@ -145,11 +139,11 @@ h1.logo
       background-position: bottom right
 
 h2
-  font-size: 1.4em
+  font:
+    size: 1.2em
+    weight: 700
   margin-bottom: .5em
-
-p
-  color: $medium
+  text-transform: uppercase
 
 p:not(:last-child)
   margin-bottom: 2em
@@ -214,29 +208,20 @@ input[type=submit]
 p.link
 
   input
-    background-color: $yellow
-    border: none
+    border: 2px solid $blue
     border-radius: .3em
-    color: $dark
+    color: $blue
     display: inline-block
     font:
       family: $mono
       size: 1em
     line-height: 1
-    margin: 0 2% 0 0
+    margin: 0
     padding: 1em
+    text-align: center
     vertical-align: top
-    width: 78%
+    width: 100%
     +box-sizing(border-box)
-
-  #copy-button
-    @extend input[type=submit]
-    display: inline-block
-    font-size: 1.1em
-    line-height: 1
-    padding: 1em
-    vertical-align: top
-    width: 20%
 
 footer.actions
   text-align: center
