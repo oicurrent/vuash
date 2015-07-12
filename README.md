@@ -1,17 +1,16 @@
 # Vuash
 
-Vuash is a simple web app that lets you share messages through single access link.
+Vuash is a simple web app that lets you share plain text through a single access link.
 
-We encrypt your message without storing any secret key in the database. This ensures that we do not have access to your message.
+We do not store keys in the database when the text is encrypted to ensure that we do not have access to it.
 
 
-## Technical Steps
+## How it works
 
-1. Vuash receives message
-2. Vuash encrypts message on the fly with a secret key
-3. Vuash returns a link to access the message and discards the secret key
-4. When message is accessed, Vuash destroys it
-5. When trying to access a message for a second time, nothing is found
+1. Vuash receives text
+2. Vuash encrypts text on the fly with a secret key
+3. Vuash returns a link to access the text and discards the secret key
+4. When text is accessed, Vuash destroys it
 
 
 ## Running it locally
