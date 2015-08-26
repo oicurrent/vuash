@@ -36,5 +36,7 @@ group :development, :test do
   gem 'capybara'
   gem 'poltergeist'
   gem 'database_cleaner'
+  gem "capistrano"
+  gem "capistrano-bundler"
 end
 
