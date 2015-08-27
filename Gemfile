@@ -24,9 +24,6 @@ gem 'http_accept_language'
 
 gem 'unicorn'
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
@@ -36,7 +33,5 @@ group :development, :test do
   gem 'capybara'
   gem 'poltergeist'
   gem 'database_cleaner'
-  gem "capistrano"
-  gem "capistrano-bundler"
 end
 
