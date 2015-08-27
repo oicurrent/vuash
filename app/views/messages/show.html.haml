@@ -1,6 +1,0 @@
-%div.padded.center.narrow
-  = image_tag 'envelope.svg', alt: ''
-  %h1= t('open-message.title')
-  %p= t('open-message.text_html')
-  = form_for @message, method: 'delete' do |f|
-    = f.submit t('open-message.button-text'), class: 'bt-blue', onclick: "_gs('event', 'Clicked Read Message link')"

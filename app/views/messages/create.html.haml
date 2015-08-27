@@ -1,9 +1,0 @@
-%div.padded.center.narrow
-  = image_tag 'paper.svg', alt: ''
-  %h1= t('created-message.title')
-  %p= t('created-message.text_html')
-
-  %input.share-link(readonly autofocus type='text')
-
-:coffee
-  $(document).trigger('hash', '#{polymorphic_url(@message)}')
