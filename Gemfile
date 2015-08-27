@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 ruby '2.2.2'
 
 gem 'rails', '4.2.3'
-gem 'pg'
 
 gem 'haml-rails'
 gem 'sass-rails'
@@ -23,6 +22,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'http_accept_language'
 
 gem 'unicorn'
+gem 'mysql2'
 
 group :development, :test do
   gem 'byebug'

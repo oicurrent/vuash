@@ -13,13 +13,10 @@
 
 ActiveRecord::Schema.define(version: 20150712073500) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "messages", force: :cascade do |t|
-    t.binary   "data",       null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.binary   "data",       limit: 65535, null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
 end
