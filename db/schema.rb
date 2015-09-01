@@ -11,12 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150712073500) do
+ActiveRecord::Schema.define(version: 20150901214213) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "messages", force: :cascade do |t|
-    t.binary   "data",       limit: 65535, null: false
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.binary   "data",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.uuid     "uuid"
   end
+
+  add_index "messages", ["uuid"], name: "index_messages_on_uuid", unique: true, using: :btree
 
 end

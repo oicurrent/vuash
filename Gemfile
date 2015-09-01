@@ -22,7 +22,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'http_accept_language'
 
 gem 'unicorn'
-gem 'mysql2'
+gem 'pg'
 
 group :development, :test do
   gem 'byebug'
