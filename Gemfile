@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 ruby '2.2.2'
 
 gem 'rails', '4.2.3'
-gem 'pg'
 
 gem 'haml-rails'
 gem 'sass-rails'
@@ -23,9 +22,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'http_accept_language'
 
 gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+gem 'pg'
 
 group :development, :test do
   gem 'byebug'
@@ -36,7 +33,5 @@ group :development, :test do
   gem 'capybara'
   gem 'poltergeist'
   gem 'database_cleaner'
-  gem "capistrano"
-  gem "capistrano-bundler"
 end
 
