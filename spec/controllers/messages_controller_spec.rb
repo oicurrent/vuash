@@ -20,16 +20,18 @@ RSpec.describe MessagesController, type: :controller do
     before { allow(Message).to receive(:find) { double }}
 
     it 'returns http success' do
-      get :show, id: 1
+      get :show, uuid: 1
       expect(response).to have_http_status(:success)
     end
   end
 
   describe 'DELETE #destroy' do
-    before { allow(Message).to receive(:destroy) { double }}
+    let(:message) { double }
+    before { allow(Message).to receive(:find_by!) { message }}
+    before { allow(message).to receive(:destroy) { message }}
 
     it 'returns http success' do
-      delete :destroy, id: 1
+      delete :destroy, uuid: 1
       expect(response).to have_http_status(:success)
     end
   end

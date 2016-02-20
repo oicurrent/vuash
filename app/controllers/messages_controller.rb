@@ -8,11 +8,16 @@ class MessagesController < ApplicationController
   end
 
   def show
-    @message = Message.find(params[:id])
+    @message = Message.find_by(uuid: params[:uuid])
+    render 'missing' unless @message
   end
 
   def destroy
-    @message = Message.destroy(params[:id])
+    if @message = Message.find_by(uuid: params[:uuid])
+      @message.destroy
+    else
+      render 'missing'
+    end
   end
 
   private
