@@ -36,7 +36,7 @@ zh-CN:
   # New message page (root)
 
   new-message:
-    placeholder: 驶入信息…
+    placeholder: 输入信息…
     icon-title: 锁定图标
     button-text: 创建加密信息
 
