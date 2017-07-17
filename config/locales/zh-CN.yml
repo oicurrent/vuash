@@ -8,7 +8,7 @@ zh-CN:
 
   slogan: 安全发送信息
 
-  logo-title: Vuash标（纸飞机）
+  logo-title: Vuash图标（纸飞机）
 
   # Site Footer
 
@@ -29,7 +29,7 @@ zh-CN:
 
       donations:
         title: 支持捐款
-        text: 我们维护Vuash使用的我们自己的资源。你可以帮助我们涵盖捐钱捐物的费用。
+        text: 我们维护Vuash使用的我们自己的资源。您可以通过捐款帮助我们。
         link-href: "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=TE4MN6P4NKANJ"
         link-text_html: 请通过Paypal捐款 &rarr;
 
@@ -73,5 +73,5 @@ zh-CN:
 
   cta:
     icon-title: 锁定图标
-    text: "发送阅后即焚的加密信息|Vuash:"
+    text: "Vuash|发送阅后即焚的加密信息:"
     link-text: 创建一条新信息
