@@ -67,7 +67,7 @@ zh-CN:
 
   wrong-key:
     title: 信息已被销毁
-    text_html: 您正尝试用错误的秘钥来打开信息<strong>基于安全性，我们已经销毁此信息！</strong><br>请询问发信人让他重新给您发送一次信息。
+    text_html: 您正尝试用错误的秘钥来打开信息<strong>基于安全性，我们已经销毁此信息。</strong><br>请询问发信人让他重新给您发送一次信息。
 
   # Call to action
 
