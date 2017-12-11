@@ -55,10 +55,9 @@ RSpec.describe MessagesController, type: :controller do
       end
 
       it "returns error when message doesn't exist" do
-        delete :destroy, id: 'INXESISTENT', format: :json
-        body = JSON.parse(response.body)
-        expect(response).to have_http_status(:success)
-        expect(body['error']).to eq 'Not found'
+        delete :destroy, id: 'INEXISTENT', format: :json
+        expect(response.body).to be_empty
+        expect(response).to have_http_status(:not_found)
       end
     end
   end

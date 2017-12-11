@@ -24,10 +24,10 @@ class MessagesController < ApplicationController
       begin
         @message = Message.destroy(params[:id])
         format.html
-        format.json { render json: @message.to_json(only: :data) }
+        format.json { render json: @message, only: :data }
       rescue ActiveRecord::RecordNotFound
         format.html { render 'missing' }
-        format.json { render json: { error: 'Not found' } }
+        format.json { head :not_found }
       end
     end
   end
