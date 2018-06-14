@@ -7,6 +7,10 @@ class MessagesController < ApplicationController
 
   def create
     @message = Message.create(message_params)
+    respond_to do |format|
+      format.html
+      format.json { render json: @message.to_json(only: :id) }
+    end
   end
 
   def show
@@ -16,7 +20,16 @@ class MessagesController < ApplicationController
   end
 
   def destroy
-    @message = Message.destroy(params[:id])
+    respond_to do |format|
+      begin
+        @message = Message.destroy(params[:id])
+        format.html
+        format.json { render json: @message, only: :data }
+      rescue ActiveRecord::RecordNotFound
+        format.html { render 'missing' }
+        format.json { head :not_found }
+      end
+    end
   end
 
   private
